@@ -1,0 +1,157 @@
+.container-fluid {
+    background: url('/assets/images/topsection-background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+.desc-container {
+    background: rgb(136,137,138);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.product-container{
+    background-color: rgba(17, 36, 45, 0.625);
+}
+.btn-secondary.cart-button {
+    background-color: #5996A3;
+}
+.review-container{
+    background: rgb(15,50,77);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+}
+.image-responsive{
+    max-width: 100%;
+    max-height: 100%;
+}
+.product-content{
+    color:white;
+    font-size: 12px;
+}
+.desc-content{
+    color:white;
+    font-size: 15px;
+}
+.review-content{
+    color:white;
+    font-size: 12px;
+    line-height:normal;
+}
+.underline {
+    text-decoration: underline !important;
+    color: white;
+    cursor: pointer;
+}
+sup {
+    font-size: x-small;
+    top: -1.9em;
+}
+
+.number-input input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.number-input {
+    margin-bottom: 3rem;
+}
+.number-input button {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.number-input input[type=number] {
+    text-align: center;
+}
+.number-input.number-input {
+    border: 1px solid #ced4da;
+    width: 10rem;
+    border-radius: .25rem;
+}
+.number-input.number-input button {
+    width: 2.6rem;
+    height: .7rem;
+}
+.number-input.number-input button.minus {
+    padding-left: 10px;
+}
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+    width: .7rem;
+    background-color: #495057;
+}
+.number-input.number-input input[type=number] {
+    max-width: 4rem;
+    padding: .5rem;
+    border: 1px solid #ced4da;
+    border-width: 0 1px;
+    font-size: 1rem;
+    height: 2rem;
+    color: #495057;
+}
+  /*@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color:transparent) {
+  
+      .number-input.def-number-input.safari_only button:before,
+      .number-input.def-number-input.safari_only button:after {
+        margin-top: -.3rem;
+      }
+    }
+  }*/
+  .reviewer-name{
+      font-size:11px;
+      font-weight:bold;
+  }
+  .reviewer-image{
+      width:90px;
+      height:90px;
+  }
+  .review-content-title{
+      font-size:18px;
+  }
+  .product-header{
+      font-weight:300;
+      font-size:32px;
+  }
+  .review-link{
+      font-size:14px;
+  }
+
+  .product-desc-image{
+      max-height: 62%;
+  }
+
+  .product-text{
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 0.75;
+  }
+
+  .btn, .btn-sm, .btn-secondary, .dropdown-toggle, .dropdown-toggle-split{
+      background-color: rgb(106,133,143);
+  }

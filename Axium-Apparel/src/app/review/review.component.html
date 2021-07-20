@@ -1,0 +1,29 @@
+<div class="backdrop">
+    <div class="review-box">
+        <button type="button" class="close" aria-label="Close" (click)="onClose()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <form #reviewForm="ngForm" (ngSubmit)="onSubmitReview(reviewForm)">
+            <div class="row">
+                <div class="col-md-7 pl-2">Please Rate the <span class="font-weight-bold" [innerHTML]="product"></span></div>
+                <div class="col-md-3">
+                    <ng-template #colorstar let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">&#9733;</span>
+                    </ng-template>
+                    <ngb-rating name='rating' [starTemplate]="colorstar" ngModel></ngb-rating>
+                </div>
+            </div>
+            <div class="form-inline p-2">
+                <label for="title" class="label pr-3">Review Title</label>
+                <input type="text" class="form-control" id="title" name="review-title" ngModel>
+            </div>
+            <div class="form-group">
+                <textarea id="desc" placeholder="- Write your review here -" rows="4" class="form-control"
+                    name="review-desc" ngModel></textarea>
+            </div>
+            <div class="text-right">
+                <button class="btn btn-secondary review-button" type="submit">Submit Review</button>
+            </div>
+        </form>
+    </div>
+</div>

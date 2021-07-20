@@ -1,0 +1,124 @@
+<!--Product Details container with the details stored in product.model.ts-->
+<div class="container-fluid">
+    <div class="row flexbox-container">
+        <div class="col-md-8 offset-md-2">
+            <div class="row flexbox-container product-container p-3">
+                <div class="col-md-6 p-5">
+                    <img [src]="product.productImage" alt="{{product.productName}}" class="image-responsive">
+                </div>
+                <div class="col-md-6 p-5 product-content">
+                    <!--For the trademarks to be displayed, we are using innerHTML (Assuming REST API which returns this has that html tags or we will have to create sup tags for the trademark to work)-->
+                    <p class="product-header" [innerHTML]="product.productName"></p>
+                    <p class="product-text" *ngFor="let productDesc of product.productDescription" [innerHTML]="productDesc"></p>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm" type="button">Select Size</button>
+                                <button type="button"
+                                    class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item">XS</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">S</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">M</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">L</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm" type="button">Select Color</button>
+                                <button type="button"
+                                    class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item">Grey</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">Red</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">Black</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">Green</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <label for="quantity">Quantity</label>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="def-number-input number-input">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                    class="minus"></button>
+                                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                    class="plus"></button>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-secondary cart-button">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Second Product Description container also getting details from product.model.ts-->
+<div class="container-fluid">
+    <div class="row flexbox-container desc-container">
+        <div class="col-md-8 offset-md-2">
+            <div class="row flexbox-container">
+                <div class="pt-4 col-md-6 p-0">
+                    <img [src]="product.productDescImage" alt="{{product.productName}}"
+                        class="image-responsive product-desc-image">
+                </div>
+                <div class="col-md-4 p-4 desc-content">
+                    <p *ngFor="let productDet of product.productDescDetail">{{productDet}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Review part of the page with all the details from review.model.ts-->
+<div class="container-fluid">
+        <app-review *ngIf="writeReview" [product]="product.productName" (closeReview)="onCloseReview()"></app-review>
+    <div class="row flexbox-container review-container p-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="row flexbox-container review-content">
+                <div class="ml-5 pl-5 p-3">
+                    <span class="product-header pl-3">Reviews</span>
+                    <!--This is the link to overlay the review modal-->                    
+                    <span class="review-link pl-5"><a class="underline" (click)="onReviewProduct()">Write a review on this product</a></span>
+                </div>
+            </div>
+            <div class="row flexbox-container review-content">
+                <!--Looping through all the reviewer and review details from the review.model.ts to display on the reviews part of the page-->
+                <div class="row" *ngFor="let review of reviews">
+                    <div class="col-auto p-3">
+                        <img [src]="review.reviewerImage" alt="reviewer1 image" class="image-responsive reviewer-image">
+                        <p class="reviewer-name mt-1">{{review.reviewerName}}</p>
+                    </div>
+                    <div class="col-md-9 p-2 review-content">
+                        <div class="row">
+                            <div class="col-auto pr-0">
+                                <p class="review-content-title"><b>{{review.reviewTitle}}</b> {{review.reviewDate}}</p>
+                            </div>
+                            <div class="col-auto">
+                                <ngb-rating [rate]="review.reviewRating"></ngb-rating>
+                            </div>
+                        </div>
+                        <p>{{review.reviewDesc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

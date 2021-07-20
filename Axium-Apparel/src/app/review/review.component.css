@@ -1,0 +1,41 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 50;
+}
+
+.review-box {
+    position: fixed;
+    top: 25vh;
+    left: 35vw;
+    width: 40vw;
+    height: 20vw;
+    padding: 16px;
+    z-index: 100;
+    background: white;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.review-button {
+    text-align: center;
+    background-color: #5996A3;
+}
+.label {
+    display: inline-block;
+}
+sup {
+    font-size: xx-small;
+    top: -0.9em;
+}
+.star {
+    position: relative;
+    display: inline-block;
+    color: #d3d3d3;
+  }
+  .full {
+    color: #5996A3;
+  }
